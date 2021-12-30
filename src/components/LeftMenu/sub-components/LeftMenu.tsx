@@ -2,12 +2,12 @@ import React from "react";
 import { IOptions, ISubOptions } from "./sideMenuOptions";
 import LeftMenuItem from "./LeftMenuItem";
 
+import "../leftMenu.scss";
 
 interface IProps {
     pageLabel: string;
     options: IOptions[];
     setRoute: (obj: any) => void;
-    children?: React.ReactNode;
 }
 
 const LeftMenu = (props: IProps) => {
@@ -45,9 +45,6 @@ const LeftMenu = (props: IProps) => {
                     </LeftMenuItem>
                 );
             })}
-            {props.children && 
-                <div>{props.children}</div>
-            }
         </>
     );
 };

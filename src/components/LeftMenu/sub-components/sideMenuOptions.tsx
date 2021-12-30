@@ -1,5 +1,5 @@
-import UiDashboard from "../../_examples/UiDashboard";
-import UiProfile from "../../_examples/UiProfile";
+import UiDashboard from "../../../_pages/UiDashboard";
+import UiProfile from "../../../UiProfile";
 
 export interface IOptions {
     id: number;

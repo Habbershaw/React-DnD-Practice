@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import "../leftMenu.scss";
 
 interface ILeftMenuItem {
     pageTitle?: string;
@@ -17,18 +17,16 @@ const LeftMenuItem = (props: ILeftMenuItem) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <>
-            <div className="left-menu-item" onClick={props.handleClick}>
-                <Link 
-                    to={!props.subOptions ? props.url : "#"} 
-                    className="item-anchor" 
-                    onClick={() => !props.subOptions && setOpen(!open)}
-                >
-                    {props.label}
-                </Link>
-                {open && props.children}
-            </div>
-        </>
+        <div className="left-menu-item" onClick={props.handleClick}>
+            <Link 
+                to={!props.subOptions ? props.url : "#"} 
+                className="item-anchor" 
+                onClick={() => !props.subOptions && setOpen(!open)}
+            >
+                {props.label}
+            </Link>
+            {open && props.children}
+        </div>
     );
 };
 
