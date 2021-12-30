@@ -1,0 +1,26 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "declaration": false,
+      "declarationMap": false,
+      "composite": false,
+      "types": [
+        "jquery",
+        "webpack-env",
+        "classnames",
+        "css-vars-ponyfill",
+        "google.maps",
+        "ie-version",
+        "mixpanel-browser",
+        "mixpanel",
+        "mocha",
+        "react-plaid-link",
+        "redux",
+        "sinon-chai",
+        "sinon",
+        "webpack-external-resources"
+      ]
+    },
+    "include": ["src/*.ts", "src/*.tsx"]
+  }
+  

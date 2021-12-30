@@ -1,0 +1,133 @@
+{
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "settings": {
+      "import/extensions": [".js", ".jsx", ".json", ".ts", ".tsx"],
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".json", ".ts", ".tsx"],
+          "paths": ["."]
+        },
+        "typescript": {
+          "alwaysTryTypes": true
+        }
+      },
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "arrow-parens": ["error", "as-needed"],
+      "arrow-spacing": "error",
+      "brace-style": "error",
+      "comma-dangle": ["error", "always-multiline"],
+      "curly": "error",
+      "dot-notation": "error",
+      "import/no-duplicates": "error",
+      "jsx-quotes": ["error", "prefer-double"],
+      "new-parens": "error",
+      "no-case-declarations": "error",
+      "no-extra-bind": "error",
+      "no-extra-label": "error",
+      "no-multi-spaces": "error",
+      "no-useless-computed-key": "error",
+      "no-useless-escape": "error",
+      "no-useless-rename": "error",
+      "no-prototype-builtins": "off",
+      "no-implicit-coercion": "off",
+      "no-unbound-method": "off",
+      "no-unused-vars": "off",
+      "no-undef": "off", // TS compilation will catch this
+      "no-unreachable": "error",
+      "no-var": "error",
+      "object-shorthand": ["error", "methods"],
+      "one-var": ["error", "never"],
+      "prefer-arrow-callback": "error",
+      "prefer-const": ["error", { "ignoreReadBeforeAssign": true }],
+      "prefer-rest-params": "error",
+      "react/jsx-key": "error",
+      "rest-spread-spacing": "error",
+      "react/prop-types": "off",
+      "semi": ["error", "always"],
+      "import/no-unresolved": [
+        "error",
+        {
+          "ignore": ["\\.scss", "webpack\\.client\\.config", "!raw-loader!", "\\*\\.svg", "\\*\\.jpg", "\\*\\.png"]
+        }
+      ],
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/explicit-function-return-type": "off", // React render method would always fail
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "interface",
+          "format": ["PascalCase"],
+          "custom": {
+            "regex": "^I[A-Z]",
+            "match": true
+          }
+        }
+      ],
+      "@typescript-eslint/no-namespace": ["error", { "allowDeclarations": true, "allowDefinitionFiles": true }],
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/camelcase": "off",
+      "@typescript-eslint/prefer-string-starts-ends-with": "error",
+      "@typescript-eslint/no-misused-promises": "error",
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "off"
+    },
+    "overrides": [
+      {
+        "files": ["*.ts", "*.tsx"],
+        "rules": {
+          // TS handles all of these import issues
+          "import/namespace": "off",
+          "import/default": "off",
+          "import/no-named-as-default-member": "off",
+          "import/export": "off",
+          "import/named": "off"
+        }
+      },
+      {
+        "files": ["**/*Test.ts", "**/*Test.tsx", "**/tests/**"],
+        "rules": {
+          "@typescript-eslint/no-explicit-any": "off",
+          "@typescript-eslint/no-non-null-assertion": "off",
+          "@typescript-eslint/ban-ts-ignore": "off",
+          "@typescript-eslint/require-await": "off"
+        }
+      }
+    ],
+    "plugins": ["@typescript-eslint", "jsx-a11y", "react", "react-hooks"],
+    "env": {
+      "node": true,
+      "browser": true,
+      "es6": true,
+      "jquery": true
+    },
+    "parserOptions": {
+      "project": "tsconfig.eslint.json",
+      "sourceType": "module",
+      "ecmaVersion": 7,
+      "jsx": true,
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
+  }
+  
